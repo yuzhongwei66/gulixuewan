@@ -14,5 +14,5 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface EduSubjectService extends IService<EduSubject> {
 
-    void saveSubject(MultipartFile file);
+    void saveSubject(MultipartFile file, EduSubjectService subjectService);
 }

@@ -24,14 +24,14 @@ import org.springframework.web.multipart.MultipartFile;
 @CrossOrigin
 public class EduSubjectController {
 @Autowired
-    private EduSubjectService eduSubjectService;
+    private EduSubjectService subjectService;
    //添加课程分类
     //获取上传过来文献，把文件内容读取出来
     @PostMapping("addSubject")
     public R addSubject(MultipartFile file)
     {
         //上传过来的excel文件
-        eduSubjectService.saveSubject(file);
+        subjectService.saveSubject(file,subjectService);
         return R.ok();
     }
 
