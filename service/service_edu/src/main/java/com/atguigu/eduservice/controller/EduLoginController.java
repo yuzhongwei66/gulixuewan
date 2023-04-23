@@ -5,15 +5,16 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/eduservice/user")
-@CrossOrigin
+@CrossOrigin  //解决跨域
 public class EduLoginController {
-    @PostMapping("/login")
-    public R login()
-    {
+    //login
+    @PostMapping("login")
+    public R login() {
         return R.ok().data("token","admin");
     }
-    @GetMapping("/info")
+    //info
+    @GetMapping("info")
     public R info() {
-        return R.ok().data("roles","[admin]").data("name","admin").data("avatar","https://picx.zhimg.com/v2-845d11005ce47d0f1f906d5bcacc225c_r.jpg?source=1940ef5c");
+        return R.ok().data("roles","[admin]").data("name","admin").data("avatar","https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif");
     }
 }

@@ -1,8 +1,8 @@
-package com.atguigu.eduservice.service.impl;
+package com.atguigu.eduservice.mapper.xml.service.impl;
 
 import com.atguigu.eduservice.entity.EduVideo;
 import com.atguigu.eduservice.mapper.EduVideoMapper;
-import com.atguigu.eduservice.service.EduVideoService;
+import com.atguigu.eduservice.mapper.xml.service.EduVideoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author testjava
- * @since 2023-04-21
+ * @since 2020-03-02
  */
 @Service
 public class EduVideoServiceImpl extends ServiceImpl<EduVideoMapper, EduVideo> implements EduVideoService {

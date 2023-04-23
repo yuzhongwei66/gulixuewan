@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.service;
+package com.atguigu.eduservice.mapper.xml.service;
 
 import com.atguigu.eduservice.entity.EduVideo;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author testjava
- * @since 2023-04-21
+ * @since 2020-03-02
  */
 public interface EduVideoService extends IService<EduVideo> {
 

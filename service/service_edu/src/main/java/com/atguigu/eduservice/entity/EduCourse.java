@@ -21,7 +21,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author testjava
- * @since 2023-04-21
+ * @since 2020-03-02
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -38,10 +38,10 @@ public class EduCourse implements Serializable {
     @ApiModelProperty(value = "课程讲师ID")
     private String teacherId;
 
-    @ApiModelProperty(value = "课程专业ID")
+    @ApiModelProperty(value = "二级分类ID")
     private String subjectId;
 
-    @ApiModelProperty(value = "课程专业父级ID")
+    @ApiModelProperty(value = "一级分类级ID")
     private String subjectParentId;
 
     @ApiModelProperty(value = "课程标题")

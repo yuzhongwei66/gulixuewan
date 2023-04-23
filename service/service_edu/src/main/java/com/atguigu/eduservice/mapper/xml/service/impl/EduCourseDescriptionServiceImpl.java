@@ -1,8 +1,8 @@
-package com.atguigu.eduservice.service.impl;
+package com.atguigu.eduservice.mapper.xml.service.impl;
 
 import com.atguigu.eduservice.entity.EduCourseDescription;
 import com.atguigu.eduservice.mapper.EduCourseDescriptionMapper;
-import com.atguigu.eduservice.service.EduCourseDescriptionService;
+import com.atguigu.eduservice.mapper.xml.service.EduCourseDescriptionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author testjava
- * @since 2023-04-21
+ * @since 2020-03-02
  */
 @Service
 public class EduCourseDescriptionServiceImpl extends ServiceImpl<EduCourseDescriptionMapper, EduCourseDescription> implements EduCourseDescriptionService {

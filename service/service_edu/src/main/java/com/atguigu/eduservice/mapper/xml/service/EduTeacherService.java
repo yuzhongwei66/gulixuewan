@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.service;
+package com.atguigu.eduservice.mapper.xml.service;
 
 import com.atguigu.eduservice.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
