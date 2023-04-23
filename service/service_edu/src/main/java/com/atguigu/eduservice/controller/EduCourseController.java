@@ -108,5 +108,7 @@ return R.ok();
         List<EduCourse> records = courseService.list(null);
         return R.ok().data("list",records);
     }
+    @DeleteMapping("{courseId}")
+
 }
 
