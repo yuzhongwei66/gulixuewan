@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.mapper.xml.service;
+package com.atguigu.eduservice.service;
 
 import com.atguigu.eduservice.entity.EduChapter;
 import com.atguigu.eduservice.entity.chapter.ChapterVo;

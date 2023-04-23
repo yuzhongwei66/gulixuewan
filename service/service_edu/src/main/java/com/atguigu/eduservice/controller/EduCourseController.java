@@ -2,11 +2,20 @@ package com.atguigu.eduservice.controller;
 
 
 import com.atguigu.commonutils.R;
+import com.atguigu.eduservice.entity.EduCourse;
+import com.atguigu.eduservice.entity.EduTeacher;
 import com.atguigu.eduservice.entity.vo.CourseInfoVo;
 import com.atguigu.eduservice.entity.vo.CoursePublishVo;
-import com.atguigu.eduservice.mapper.xml.service.EduCourseService;
+import com.atguigu.eduservice.entity.vo.CourseQuery;
+import com.atguigu.eduservice.entity.vo.TeacherQuery;
+import com.atguigu.eduservice.service.EduCourseService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -52,6 +61,52 @@ public class EduCourseController {
         CoursePublishVo coursePublishVo = courseService.publishCourseInfo(id);
         return R.ok().data("publishCourse",coursePublishVo);
     }
+@PostMapping("publishCourse/{id}")
+    public R publishCourse(@PathVariable String id)
+{
+    EduCourse eduCourse =new EduCourse();
+    eduCourse.setId(id);
+    eduCourse.setStatus("Normal");
+    courseService.updateById(eduCourse);
+return R.ok();
+}
 
+//添加课程基本方法
+    @PostMapping("lista/{current}/{limit}")
+    public R getCourseList(@PathVariable long current,@PathVariable long limit,
+                           @RequestBody(required = false) CourseQuery courseQuery) {
+     Page<EduCourse> page = new Page<>(current, limit);
+        QueryWrapper<EduCourse> wrapper = new QueryWrapper<>();
+        // 多条件组合查询
+        // mybatis学过 动态sql
+        String name = courseQuery.getTitle();
+        String status = courseQuery.getStatus();
+
+        //判断条件值是否为空，如果不为空拼接条件
+        if(!StringUtils.isEmpty(name)) {
+            //构建条件
+            wrapper.like("title",name);
+        }
+        if(!StringUtils.isEmpty(status)) {
+            wrapper.eq("status",status);
+        }
+
+
+        //排序
+        wrapper.orderByDesc("gmt_create");
+
+        //调用方法实现条件查询分页
+       courseService.page(page,wrapper);
+
+        long total = page.getTotal();//总记录数
+        List<EduCourse> records = page.getRecords(); //数据list集合
+        return R.ok().data("total",total).data("rows",records);
+
+    }
+    @GetMapping("getCourseList")
+    public R getCourseList() {
+        List<EduCourse> records = courseService.list(null);
+        return R.ok().data("list",records);
+    }
 }
 

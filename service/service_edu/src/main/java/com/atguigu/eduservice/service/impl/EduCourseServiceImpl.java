@@ -1,17 +1,24 @@
-package com.atguigu.eduservice.mapper.xml.service.impl;
+package com.atguigu.eduservice.service.impl;
 
 import com.atguigu.eduservice.entity.EduCourse;
 import com.atguigu.eduservice.entity.EduCourseDescription;
 import com.atguigu.eduservice.entity.vo.CourseInfoVo;
 import com.atguigu.eduservice.entity.vo.CoursePublishVo;
+import com.atguigu.eduservice.entity.vo.TeacherQuery;
 import com.atguigu.eduservice.mapper.EduCourseMapper;
-import com.atguigu.eduservice.mapper.xml.service.EduCourseService;
-import com.atguigu.eduservice.mapper.xml.service.EduCourseDescriptionService;
+import com.atguigu.eduservice.service.EduCourseDescriptionService;
+import com.atguigu.eduservice.service.EduCourseService;
 import com.atguigu.servicebase.exceptionhandler.GuliException;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.List;
 
 /**
  * <p>
@@ -94,6 +101,12 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         //调用mapper
         CoursePublishVo publishCourseInfo = baseMapper.getPublishCourseInfo(id);
         return publishCourseInfo;
+    }
+
+    @Override
+    public List<EduCourse> lista() {
+
+        return null;
     }
 
 }

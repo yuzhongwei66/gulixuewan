@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.mapper.xml.service;
+package com.atguigu.eduservice.service;
 
 import com.atguigu.eduservice.entity.EduCourse;
 import com.atguigu.eduservice.entity.vo.CourseInfoVo;
@@ -28,4 +28,6 @@ public interface EduCourseService extends IService<EduCourse> {
 
     //根据课程id查询课程确认信息
     CoursePublishVo publishCourseInfo(String id);
+
+    List<EduCourse> lista();
 }

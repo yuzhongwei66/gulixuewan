@@ -2,9 +2,11 @@ package com.atguigu.eduservice.controller;
 
 
 import com.atguigu.commonutils.R;
+import com.atguigu.eduservice.entity.EduSubject;
 import com.atguigu.eduservice.entity.subject.OneSubject;
-import com.atguigu.eduservice.mapper.xml.service.EduSubjectService;
+import com.atguigu.eduservice.service.EduSubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.multipart.MultipartFile;
