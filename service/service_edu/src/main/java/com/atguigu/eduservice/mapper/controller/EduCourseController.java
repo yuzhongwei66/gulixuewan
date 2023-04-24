@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.controller;
+package com.atguigu.eduservice.mapper.controller;
 
 
 import com.atguigu.commonutils.R;
@@ -103,12 +103,16 @@ return R.ok();
         return R.ok().data("total",total).data("rows",records);
 
     }
-    @GetMapping("getCourseList")
+    @GetMapping("list")
     public R getCourseList() {
         List<EduCourse> records = courseService.list(null);
         return R.ok().data("list",records);
     }
     @DeleteMapping("{courseId}")
-
+public R deleteCourse(@PathVariable String courseId)
+    {
+        courseService.removeCourse(courseId);
+        return R.ok();
+    }
 }
 

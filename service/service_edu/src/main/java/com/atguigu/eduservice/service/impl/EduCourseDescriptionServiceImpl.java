@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class EduCourseDescriptionServiceImpl extends ServiceImpl<EduCourseDescriptionMapper, EduCourseDescription> implements EduCourseDescriptionService {
 
+    @Override
+    public void removeByCourseId() {
+
+    }
 }

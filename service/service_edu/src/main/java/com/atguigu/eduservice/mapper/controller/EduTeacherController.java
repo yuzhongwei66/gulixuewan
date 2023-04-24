@@ -1,4 +1,4 @@
-package com.atguigu.eduservice.controller;
+package com.atguigu.eduservice.mapper.controller;
 
 
 import com.atguigu.commonutils.R;

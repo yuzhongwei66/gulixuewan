@@ -8,6 +8,7 @@ import com.atguigu.eduservice.mapper.EduChapterMapper;
 import com.atguigu.eduservice.service.EduChapterService;
 import com.atguigu.eduservice.service.EduVideoService;
 import com.atguigu.servicebase.exceptionhandler.GuliException;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
@@ -97,5 +98,12 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
             //成功  1>0   0>0
             return result>0;
         }
+    }
+
+    @Override
+    public void removeByCourseId(String courseId) {
+        LambdaQueryWrapper<EduChapter> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(EduChapter::getCourseId,courseId);
+        baseMapper.delete(queryWrapper);
     }
 }

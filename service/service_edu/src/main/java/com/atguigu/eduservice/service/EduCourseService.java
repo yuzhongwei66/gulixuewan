@@ -30,4 +30,6 @@ public interface EduCourseService extends IService<EduCourse> {
     CoursePublishVo publishCourseInfo(String id);
 
     List<EduCourse> lista();
+
+    void removeCourse(String courseId);
 }
