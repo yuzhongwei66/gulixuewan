@@ -1,4 +1,4 @@
-package com.atguigu.demo;
+package codedemo;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -26,7 +26,7 @@ public class CodeGenerator {
         // 2、全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir("C:\\Users\\MR\\Desktop\\guli_parent\\service\\service_edu" + "/src/main/java");
+        gc.setOutputDir("C:\\Users\\MR\\Downloads\\SSM资料\\gulixuewan2\\service\\service_cms" + "/src/main/java");
 
         gc.setAuthor("testjava");
         gc.setOpen(false); //生成后是否打开资源管理器
